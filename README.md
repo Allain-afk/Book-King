@@ -31,8 +31,6 @@ A comprehensive Library Information Management System designed to streamline lib
    ```bash
    https://github.com/Allain-afk/Book-King.git
 
-## 📝 License
-This project is licensed under the MIT License.
 
 ## 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request for any changes.

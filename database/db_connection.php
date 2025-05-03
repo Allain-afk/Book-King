@@ -2,7 +2,7 @@
 // database/db_connection.php
 
 try {
-    // First, connect without specifying the database
+    // connect to a database
     $pdo = new PDO(
         "mysql:host=localhost",
         "root",

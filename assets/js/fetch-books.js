@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             data.items?.forEach(book => {
                 const thumb = book.volumeInfo.imageLinks?.thumbnail?.replace('http://', 'https://') || 
                              'https://via.placeholder.com/160x240.png/efefef/999999?text=Book+Cover';
-                // Rest of your book display code here
             });
         });
 });

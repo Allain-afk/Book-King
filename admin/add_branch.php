@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit;
 }
 
-// Include database connection
+// database connection
 $pdo = require '../database/db_connection.php';
 
 // Check if the form was submitted

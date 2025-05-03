@@ -1,9 +1,8 @@
 <?php
-// Start output buffering at the very beginning
 ob_start();
 session_start();
 
-// Include the database connection
+// database connection
 $pdo = require './database/db_connection.php';
 
 // Check for error messages

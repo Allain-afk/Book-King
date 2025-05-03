@@ -1,5 +1,5 @@
 <?php
-// book-details.php - Display book information
+// book-details.php - Display book information.
 
 $title = isset($_GET['title']) ? urldecode($_GET['title']) : 'Unknown Book';
 
