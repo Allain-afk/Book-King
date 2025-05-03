@@ -29,7 +29,7 @@ A comprehensive Library Information Management System designed to streamline lib
 1. Clone the repository:
 
    ```bash
-   https://github.com/ayhamahmed/BOOK-KING-LIMS.git
+   https://github.com/Allain-afk/Book-King.git
 
 ## 📝 License
 This project is licensed under the MIT License.
