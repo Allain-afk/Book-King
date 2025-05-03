@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Add any critical styles here as a fallback */
+.branch-management-container {
+    padding: 20px;
+    background: #FEF3E8;
+    min-height: calc(100vh - 80px);
+    margin-top: 0;
+}
+
+.content-header {
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.content-title {
+    color: #B07154;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(176, 113, 84, 0.1);
+}
+
+.table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(176, 113, 84, 0.1);
+}
+
+/* Basic styles in case CSS file fails to load */
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* Add these styles to make the modal work properly */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Updated button styles */
+.add-branch-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.add-branch-btn:hover {
+    background: #45a049;
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#modalTitle {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+}
+
+/* Updated header and button styles */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0;
+    border-bottom: 2px solid rgba(176, 113, 84, 0.1);
+}
+
+.page-title {
+    color: #B07154;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(176, 113, 84, 0.1);
+}
+
+/* Brown theme button styles */
+.add-branch-btn {
+    background: #B07154;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.add-branch-btn:hover {
+    background: #8B5B43;
+}
+
+/* Update modal buttons to match theme */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons .add-branch-btn {
+    background: #B07154;
+}
+
+.form-buttons .add-branch-btn:hover {
+    background: #8B5B43;
+}
+
+.form-buttons .delete-btn {
+    background: #FFE5E5;
+    color: #B07154;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.form-buttons .delete-btn:hover {
+    background: #FFD1D1;
+}
+
+/* Update modal styles to match theme */
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#modalTitle {
+    color: #B07154;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.form-group label {
+    color: #B07154;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    border: 2px solid #F4DECB;
+    padding: 10px;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #B07154;
+}
+
+.close-btn {
+    color: #B07154;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.close-btn:hover {
+    color: #8B5B43;
+}
+
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .controls-container {
+        justify-content: stretch;
+    }
+
+    .add-branch-btn {
+        width: 100%;
+    }
+}
+
+/* Action buttons in the table */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background: #F4DECB;
+    color: #B07154;
+}
+
+.edit-btn:hover {
+    background: #E4C4A9;
+}
+
+.delete-btn {
+    background: #B07154;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #8B5B43;
+}
+
+/* Modal buttons */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons .delete-btn {
+    background: #B07154;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-buttons .delete-btn:hover {
+    background: #8B5B43;
+}
+
+.form-buttons .add-branch-btn {
+    background: #B07154;
+    color: white;
+}
+
+.form-buttons .add-branch-btn:hover {
+    background: #8B5B43;
+}
+
+.success-message {
+    background-color: #F4DECB;
+    color: #8B5B43;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 2px solid #B07154;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    position: relative;
+    animation: slideDown 0.3s ease-out, fadeOut 0.5s ease 3s forwards;
+}
+
+.success-message::before {
+    content: '✓';
+    background: #B07154;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+    }
+}
+
+.error-message {
+    background-color: #FDE8E8;
+    color: #9B1C1C;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #9B1C1C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Auto-hide messages after 3 seconds */
+.success-message, .error-message {
+    animation: fadeOut 0.5s ease 3s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+.header {
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.datetime-display {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.time-section, .date-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #B07154;
+}
+
+.time-icon, .date-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.time-display, .date-display {
+    font-size: 16px;
+    font-weight: 500;
+    color: #B07154;
+}
+
+.admin-name-1 {
+    font-size: 22px;
+    color: #B07154;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+    .datetime-display {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+/* Delete confirmation modal styles */
+.delete-confirm-modal {
+    max-width: 400px !important;
+    text-align: center;
+    padding: 30px !important;
+    background: #FEF3E8 !important;
+    border: 2px solid #F4DECB;
+}
+
+.delete-icon {
+    margin: 0 auto 20px;
+    width: 48px;
+    height: 48px;
+}
+
+.delete-title {
+    color: #B07154;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.delete-message {
+    color: #8B5B43;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.delete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cancel-delete-btn {
+    padding: 10px 20px;
+    border: 2px solid #F4DECB;
+    background: white;
+    color: #B07154;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancel-delete-btn:hover {
+    background: #F4DECB;
+    border-color: #B07154;
+}
+
+.confirm-delete-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #B07154;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.confirm-delete-btn:hover {
+    background: #8B5B43;
+}
+
+@media (max-width: 640px) {
+    .delete-confirm-modal {
+        margin: 16px;
+        padding: 20px !important;
+    }
+
+    .delete-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-delete-btn,
+    .confirm-delete-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}

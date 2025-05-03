@@ -1,0 +1,38 @@
+/* Header styles */
+.header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-name-1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Content styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #FEF3E8;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+}

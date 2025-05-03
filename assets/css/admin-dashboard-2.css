@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.header {
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.datetime-display {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.time-section, .date-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #B07154;
+}
+
+.time-icon, .date-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.time-display, .date-display {
+    font-size: 16px;
+    font-weight: 500;
+    color: #B07154;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin-name-1 {
+    font-size: 22px;
+    color: #B07154;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .datetime-display {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+.branch-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(176, 113, 84, 0.1);
+    border: 1px solid rgba(176, 113, 84, 0.1);
+}
+
+.branch-title {
+    color: #B07154;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(176, 113, 84, 0.1);
+}
+
+.branch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.branch-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(176, 113, 84, 0.1);
+    transition: all 0.3s ease;
+}
+
+.branch-item:hover {
+    box-shadow: 0 4px 12px rgba(176, 113, 84, 0.15);
+    border-color: rgba(176, 113, 84, 0.2);
+    transform: translateY(-2px);
+}
+
+.branch-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(176, 113, 84, 0.1);
+    flex-shrink: 0;
+}
+
+.branch-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.branch-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.branch-name {
+    color: #2C3E50;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.branch-id {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.maximize-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(176, 113, 84, 0.1);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.maximize-icon:hover {
+    background: rgba(176, 113, 84, 0.2);
+    transform: scale(1.05);
+}
+
+.maximize-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.no-branches {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    padding: 20px;
+    background: rgba(176, 113, 84, 0.05);
+    border-radius: 12px;
+}
+
+.admins-section {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(176, 113, 84, 0.1);
+    border: 1px solid rgba(176, 113, 84, 0.1);
+}
+
+.admins-title {
+    color: #B07154;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(176, 113, 84, 0.1);
+}
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(176, 113, 84, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+.admin-card:hover {
+    box-shadow: 0 4px 12px rgba(176, 113, 84, 0.15);
+    border-color: rgba(176, 113, 84, 0.2);
+    transform: translateY(-2px);
+}
+
+.admin-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(176, 113, 84, 0.1);
+    flex-shrink: 0;
+}
+
+.admin-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.admin-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.admin-name {
+    color: #2C3E50;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.admin-id {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.status-text.active {
+    color: #27AE60;
+}
+
+.status-text.deactive {
+    color: #E74C3C;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(176, 113, 84, 0.1);
+    border: 1px solid rgba(176, 113, 84, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    color: #2C3E50;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(176, 113, 84, 0.1);
+}
+
+.borrower-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.borrower-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(176, 113, 84, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.borrower-item:hover {
+    box-shadow: 0 4px 12px rgba(176, 113, 84, 0.15);
+    border-color: rgba(176, 113, 84, 0.2);
+    transform: translateY(-2px);
+}
+
+.borrower-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(176, 113, 84, 0.1);
+    flex-shrink: 0;
+}
+
+.borrower-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.borrower-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.borrower-name {
+    color: #2C3E50;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.borrower-id {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.overdue-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #FDE8E8;
+    color: #E74C3C;
+    width: fit-content;
+    margin-top: 4px;
+}
+
+.action-icon,
+.action-icon:hover,
+.action-icon img {
+    display: none;
+}
+
+.no-borrowers-message {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    padding: 20px;
+    background: rgba(176, 113, 84, 0.05);
+    border-radius: 12px;
+}
+
+.chart-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(176, 113, 84, 0.1);
+    margin: 24px;
+    border: 1px solid rgba(176, 113, 84, 0.1);
+}
+
+.chart-title {
+    color: #B07154;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(176, 113, 84, 0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chart-container {
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(176, 113, 84, 0.05);
+    border-radius: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.legend-item:hover {
+    background: rgba(176, 113, 84, 0.1);
+    transform: translateY(-2px);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+}
+
+.legend-color.borrowed {
+    background: #B07154;
+}
+
+.legend-color.returned {
+    background: #F4DECB;
+}
+
+.legend-text {
+    color: #2C3E50;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .chart-section {
+        margin: 16px;
+        padding: 20px;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+    .chart-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #B07154;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link:hover {
+    background: rgba(176, 113, 84, 0.1);
+}
+
+.nav-link i {
+    font-size: 16px;
+}
